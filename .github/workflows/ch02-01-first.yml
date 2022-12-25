@@ -1,0 +1,46 @@
+####################
+# WORKFLOW NAME
+####################
+# Optional argument, if not defined, the value will be set to the name of the file
+name:  ch02-01-First
+ 
+####################
+# TRIGGERS
+####################
+# Single triggers can be defined directly, but it also can be defined as a list
+# on: push
+on: [push]
+# Multiple triggers go enclosed in brackets
+# on: [push, pull_request]
+
+####################
+# JOBS
+####################
+# Required argument
+# Every job must have an unique identifier
+# Identifier name can only have a-z, A-Z, -, _
+# By default, jobs are run in parallel
+jobs:
+  job1:
+    name: First Job
+    ### RUNNERS
+    # Can use several operating systems, like Ubuntu, Windows Server and Mac.
+    # Each job can use a different runner. 
+    runs-on: ubuntu-latest
+    ### STEPS
+    # Are tasks within a job
+    # Is a process run on a compute resource 
+    steps:
+      - name: Step one
+        uses: actions/checkout@v2
+      - name: Step two
+        run: "env | sort"
+  job2:
+    name: Second Job
+    runs-on: windows-latest
+    steps:
+      - name: Step one
+        uses: actions/checkout@v2
+      - name: Step two
+        run: "Get-ChildItem Env: | Sort-Item Name"
+  
