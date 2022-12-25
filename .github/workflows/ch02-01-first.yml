@@ -2,7 +2,7 @@
 # WORKFLOW NAME
 ####################
 # Optional argument, if not defined, the value will be set to the name of the file
-name:  ch02-01-First
+name:  Chapter 02 - First Workflow
  
 ####################
 # TRIGGERS
